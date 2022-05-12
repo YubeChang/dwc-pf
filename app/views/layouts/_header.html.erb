@@ -1,4 +1,9 @@
 <header style="background-color: #bdb76b;">
   hoge</br>
-  huga
+  hoge</br>
+  <%= link_to "新規登録",         new_user_registration_path %>
+  <%= link_to "publicログイン",   new_user_session_path %>
+  <%= link_to "adminログイン",    new_admin_session_path %>
+  <%= link_to "publicログアウト", destroy_user_session_path, method: :delete %>
+  <%= link_to "adminログアウト",  destroy_admin_session_path, method: :delete %>
 </header>
