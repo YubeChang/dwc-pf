@@ -8,7 +8,7 @@ devise_for :admin, skip: [:registrations, :passwords], controllers: {
   sessions: "admin/sessions"
 }
 
-namespace :public do
+namespace :public, path: "/" do
   root to:                   "homes#top"
   get "/about"            => "homes#about"
   resources "users" do
