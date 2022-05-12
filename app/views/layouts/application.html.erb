@@ -12,9 +12,16 @@
 
   <body>
     <%= render "layouts/header" %>
-      <div class = "container" >
-        <%= yield %>
+    <main>
+      <div style = "background-color: #ffe4c4;">
+        <p class="notice text-center text-success"><%= notice %></p>
+        <p class="alert text-center text-danger"><%= alert %></p>
+        <div class = "container" >
+          <%= yield %>
+        </div>
       </div>
+    </main>
+
     <%= render "layouts/footer" %>
   </body>
 </html>
