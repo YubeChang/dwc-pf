@@ -26,6 +26,7 @@ namespace :admin do
   resources "tags"
   resources "posts"
   resources "stores"
+  get "searches" => "searches#search"
 end
 
 end
