@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 gem 'faker'
 gem 'pry-byebug', group: :development
+gem 'pry-rails'
 gem 'dotenv-rails'
 
 # Use Active Storage variant

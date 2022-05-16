@@ -3,6 +3,7 @@ class Admin::TagsController < ApplicationController
   end
 
   def index
+    @tags = Tag.all
   end
 
   def edit
