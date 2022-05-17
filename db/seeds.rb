@@ -39,12 +39,17 @@ Post.create!(
        is_delete: false,
       created_at: Time.zone.now)
 Post.create!(
+         user_id: 1,
+        store_id: 1,
+            body: "リピート来店した",
+       is_delete: false,
+      created_at: Time.zone.now)
+Post.create!(
          user_id: 2,
         store_id: 1,
             body: "そこそこいけてる",
        is_delete: false,
       created_at: Time.zone.now)
-
 PostTag.create!(
          post_id: 1,
           tag_id: 1,

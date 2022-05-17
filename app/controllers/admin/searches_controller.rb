@@ -14,8 +14,6 @@ class Admin::SearchesController < ApplicationController
     else # @model_name == "Tag"
       @tags = Tag.looks(params[:search_option], params[:ward])
       render "admin/tags/index"
-      # ここの流れまだ
-      # ここから配列の中身をバラしてTagが含まれるPostを探して表示したい?
     end
   end
 

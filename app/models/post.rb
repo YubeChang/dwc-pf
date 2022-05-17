@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  belongs_to :user
 
   def self.looks(search_option, word)
     if    search_option == "perfect_match"               #完全一致
