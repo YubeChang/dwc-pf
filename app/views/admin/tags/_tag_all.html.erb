@@ -1,0 +1,8 @@
+<% tags.each do |tag| %>
+  <tr id="edit-tag-<%="#{tag.id}"%>">
+    <td><%= tag.created_at.strftime("%Y/%m/%d %H:%M:%S") %></td>
+    <td><%= tag.name %></td>
+    <td><%= link_to "編集", edit_admin_tag_path(tag.id), class:"btn btn-success", remote: true %></td>
+    <td><%= link_to "削除", admin_tag_path(tag.id), method: :delete, class:"btn btn-danger", remote: true %></td>
+  </tr>
+<% end %>

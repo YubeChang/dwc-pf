@@ -16,15 +16,8 @@
           <th></th>
         </tr>
       </thead>
-      <tbody>
-        <% @tags.each do |tag| %>
-          <tr>
-            <td><%= tag.created_at.strftime("%Y/%m/%d %H:%M:%S") %></td>
-            <td><%= tag.name %></td>
-            <td><%= link_to "編集", edit_admin_tag_path(tag.id), class:"btn btn-success" %></td>
-            <td><%= link_to "削除", admin_tag_path(tag.id), method: :delete, class:"btn btn-danger" %></td>
-          </tr>
-        <% end %>
+      <tbody id="tag-all">
+        <%= render "admin/tags/tag_all",tags: @tags %>
       </tbody>
     </table>
   </div>
