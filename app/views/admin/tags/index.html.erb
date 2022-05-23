@@ -1,0 +1,24 @@
+<%= render "layouts/search" %>
+
+<div class = "row mb-3">
+  <div class = "col-sm-3">
+    <h3 class ="text-center mx-1" style="background-color: #d3d3d3;"><b>タグデータ</b></h3>
+  </div>
+</div>
+<div class = "row">
+  <div class = "col">
+    <table class='table table-hover table-inverse'>
+      <thead>
+        <tr class="table-active">
+          <th>登録日</th>
+          <th>名前</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="tag-all">
+        <%= render "admin/tags/tag_all",tags: @tags %>
+      </tbody>
+    </table>
+  </div>
+</div>

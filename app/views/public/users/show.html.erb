@@ -1,0 +1,74 @@
+<div class = "row mb-3">
+  <div class = "col-sm-3">
+    <% if @user == current_user %>
+      <h3 class ="text-center mx-1" style="background-color: #d3d3d3;"><b>マイページ</b></h3>
+    <% else %>
+      <h3 class ="text-center mx-1" style="background-color: #d3d3d3;"><b>"<%= @user.name %>"のページ</b></h3>
+    <% end %>
+  </div>
+</div>
+<!--ページ全体のrow--->
+<div class="row">
+  <!--左部:ユーザーデータ詳細-->
+  <div class="col-sm-5" id="user_profile">
+    <div class="row">
+      <div class="col-sm-4">
+        <%= image_tag @user.get_user_image(70,70) %>
+      </div>
+      <div class="col-sm-8">
+        <%= @user.name %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <table>
+          <tr>
+            <th>フォロー</th>
+            <td>
+              <%= link_to following_public_user_path(@user) do %>
+              <%= @user.following.count %>人
+              <% end %>
+            </td>
+            <th>フォロワー</th>
+            <td>
+              <%= link_to followers_public_user_path(@user) do %>
+              <%= @user.followers.count %>人
+              <% end %>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+     <div class="row">
+      <div class="col-sm-12">
+        <h6><b>プロフィール</b></h6>
+        <%= @user.introduction %></br>
+        <% if @user == current_user %>
+          <%= link_to "プロフィール編集", edit_public_user_path(@user), class: "btn btn-info", remote: true %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <!--右部:ユーザー投稿一覧(最新が上、古い投稿が下)-->
+  <div class="col-sm-7 border border-secondary">
+    <% @posts.each do |post| %>
+      <div class="row mt-3">
+        <div class="col-sm-4">
+          <%= image_tag post.get_post_image(70,70) %>
+        </div>
+        <div class="col-sm-6">
+          <%= post.body %></br>
+          <%= "tag?"%></br>
+          <%= post.created_at %>
+        </div>
+        <div class="col-sm-2">
+          <% if post.is_delete? %>
+            <%= link_to "復元", admin_post_path(post), method: :patch, class: "btn btn-warning" %>
+          <% else %>
+            <%= link_to "削除", admin_post_path(post), method: :patch, class: "btn btn-danger" %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

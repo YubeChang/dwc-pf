@@ -1,0 +1,8 @@
+<td><%= tag.created_at.strftime("%Y/%m/%d %H:%M:%S") %></td>
+    <td>
+      <%= form_with model: tag, url: admin_tag_path, method: :patch, local: false do |f| %>
+      <%= f.text_field :name %>
+      <%= f.submit "変更", class: "btn btn-primary" %>
+      <% end %>
+    </td>
+<td><%= link_to "削除", admin_tag_path(tag.id), method: :delete, class:"btn btn-danger", remote: true %></td>
