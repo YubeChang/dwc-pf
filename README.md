@@ -47,3 +47,10 @@
 
 - Font Awesome
   - https://fontawesome.com/
+
+
+## 更新予定
+- 遅延工程の消化
+  - API
+  - デザイン
+  - Ajax
