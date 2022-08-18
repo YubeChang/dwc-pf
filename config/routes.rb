@@ -9,8 +9,8 @@ devise_for :admin, skip: [:registrations, :passwords], controllers: {
 }
 
 namespace :public, path: "/" do
-  root to:                 "homes#about"
-  get "/top"            => "homes#top"
+  root to:                   "homes#top"
+  get "/about"            => "homes#about"
   patch "users/unsubscribe" => "users#unsubscribe"
   resources "users" do
     member do
